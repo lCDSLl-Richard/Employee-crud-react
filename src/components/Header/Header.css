@@ -1,0 +1,8 @@
+.main-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5em;
+  background-color: #050505;
+  color: white;
+}

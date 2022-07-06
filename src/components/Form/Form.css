@@ -1,0 +1,45 @@
+#main-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #1b9aaa;
+  color: white;
+}
+
+.input-label {
+  margin-top: 0.25em;
+  font-size: 1.2em;
+}
+
+.input {
+  margin-top: 0.25em;
+  border-radius: 0.5em;
+  padding-left: 0.5em;
+}
+
+.input:focus {
+  background-color: #050505;
+  color: white;
+}
+
+form button {
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+  border-radius: 0.5em;
+  background-color: white;
+  border: none;
+}
+
+form button:hover {
+  cursor: pointer;
+}
+
+form button:active {
+  transform: translateY(0.1em);
+}
+
+form button :focus {
+  background-color: #050505;
+  color: white;
+}
