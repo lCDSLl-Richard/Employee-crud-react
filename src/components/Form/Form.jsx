@@ -1,14 +1,16 @@
 import React from "react";
-import { useState } from "react";
+import { useContext } from "react";
+import { Context } from "../../context/context";
 import "./Form.css";
 
 const Form = () => {
-  const initialState = { name: "", salary: 0, date: "" };
-
-  const [form, setForm] = useState(initialState);
+  const { form, setForm, addEmployee, initialState, editFlag } =
+    useContext(Context);
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    addEmployee(form);
+    setForm(initialState);
   };
 
   return (
@@ -37,7 +39,9 @@ const Form = () => {
         value={form.date || ""}
         onChange={(e) => setForm({ ...form, date: e.target.value })}
       />
-      <button onClick={handleSubmit}>Save</button>
+      <button onClick={(e) => handleSubmit(e)}>
+        {editFlag ? "Update" : "Save"}
+      </button>
     </form>
   );
 };

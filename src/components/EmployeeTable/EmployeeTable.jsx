@@ -1,7 +1,12 @@
 import React from "react";
+import { useContext } from "react";
+import { Context } from "../../context/context";
 import "./EmployeeTable.css";
+import EmployeeEntry from "./EmployeeEntry/EmployeeEntry";
 
 const EmployeeTable = () => {
+  const { employees } = useContext(Context);
+
   return (
     <div className="table-container">
       <table>
@@ -13,26 +18,9 @@ const EmployeeTable = () => {
             <th>ID</th>
             <th>Actions</th>
           </tr>
-          <tr>
-            <td>Ricardo</td>
-            <td>15000</td>
-            <td>05-12-2003</td>
-            <td>0</td>
-            <td>
-              <button className="edit-btn">Edit</button>
-              <button className="delete-btn">Delete</button>
-            </td>
-          </tr>
-          <tr>
-            <td>Ricardo</td>
-            <td>15000</td>
-            <td>05-12-2003</td>
-            <td>0</td>
-            <td>
-              <button className="edit-btn">Edit</button>
-              <button className="delete-btn">Delete</button>
-            </td>
-          </tr>
+          {employees.map((employee) => (
+            <EmployeeEntry employee={employee} key={employee.id} />
+          ))}
         </tbody>
       </table>
     </div>

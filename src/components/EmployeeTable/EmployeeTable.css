@@ -66,8 +66,3 @@ td {
 .delete-btn:active {
   transform: translateY(0.1em);
 }
-
-.edit-btn:focus,
-.delete-btn:focus {
-  color: white;
-}
